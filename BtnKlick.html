@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>titel</title>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    // Jedes Element hat eine onclick Eigenschaft wodurch das Element anklickbar wird
+    // div hat keine eigenen Eigenschaften, sonder vererbt alle Eigenschaften auf die in div enthaltenen Elemente
+    // bei onclick wird dann die zuvor erstellte Funktion aufgerufen
+    <div onclick="KlickMich()">
+      <p>KlickMich</p>
+    </div>
+
+    <script>
+      function KlickMich(params) {
+        alert("Du hast geklickt");
+      }
+    </script>
+  </body>
+</html>
