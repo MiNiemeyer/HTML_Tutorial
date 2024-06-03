@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Leaflet Multi Polylines</title>
+    <link
+      rel="stylesheet"
+      href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css"
+    />
+    <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  </head>
+
+  <body>
+    <div id="map" style="width: 900px; height: 580px"></div>
+    <script>
+          
+      // Creating map options
+      var mapOptions = {
+        center: [36.8198475311531, -3.2138767356491655],
+        zoom: 18,
+      };
+      // Creating a map object
+      var map = new L.map("map", mapOptions);
+
+      // Creating a Layer object
+      var layer = new L.TileLayer(
+        "http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+      );
+
+      // Adding layer to the map
+      map.addLayer(layer);
+
+      var polylatlang = [
+        [52.25764, 8.857103],
+        [52.257639, 8.857129],
+        [52.257637, 8.857155],
+        [52.257635, 8.857181],
+        [52.257626, 8.857223],
+        [52.257616, 8.857264],
+      ];
+
+      // Creating poly line options
+      var polyLineOptions = { color: "magenta" };
+
+      var polyline = L.polyline(polylatlang,polyLineOptions);
+
+      polyline.addTo(map);
+      map.fitBounds(polyline.getBounds());
+     
+    </script>
+  </body>
+</html>
